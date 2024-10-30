@@ -95,3 +95,10 @@ Product Strategy:
 
 Focus on popular categories like computers and leading products like the WWI Desktop PC for promotions.
 This streamlined setup allows stakeholders to quickly identify critical insights while leveraging SQLite for flexible, efficient data management and Power BI for interactive reporting.
+
+POWERBI VISUALIZATION:
+![DataSpark](https://github.com/user-attachments/assets/3eaafa56-e290-4efa-86e3-216178a99cc5)
+![Customer Performance](https://github.com/user-attachments/assets/d492bc0d-7ec0-4b9c-9af5-11ed8f69d4d2)
+![Yearly performance](https://github.com/user-attachments/assets/83595770-1b1b-4ac5-bc25-5bb1ff57056a)
+![Store Performance](https://github.com/user-attachments/assets/2dac8cec-e3df-4d50-ab65-62d7def616c7)
+![Product Performance](https://github.com/user-attachments/assets/49f14501-7538-405f-a589-9ec0bc593a2f)
