@@ -1,0 +1,87 @@
+Table Creation Queries
+1.Create Customers Table
+CREATE TABLE IF NOT EXISTS Customers (
+    CustomerKey INT PRIMARY KEY,
+    Gender TEXT,
+    Name TEXT,
+    City TEXT,
+    StateCode TEXT,
+    State TEXT,
+    ZipCode TEXT,
+    Country TEXT,
+    Continent TEXT,
+    Birthday DATE,
+    Age INT,
+    AgeRange TEXT
+)
+
+2.Create ExchangeRates Table
+CREATE TABLE IF NOT EXISTS ExchangeRates (
+    Date DATE,
+    Currency TEXT,
+    Exchange FLOAT,
+    PRIMARY KEY (Date, Currency)
+)
+
+3.Create Products Table
+Copy code
+CREATE TABLE IF NOT EXISTS Products (
+    ProductKey INT PRIMARY KEY,
+    ProductName TEXT,
+    Brand TEXT,
+    Color TEXT,
+    UnitCostUSD FLOAT,
+    UnitPriceUSD FLOAT,
+    SubcategoryKey INT,
+    Subcategory TEXT,
+    CategoryKey INT,
+    Category TEXT
+)
+
+4.Create Sales Table
+CREATE TABLE IF NOT EXISTS Sales (
+    OrderNumber INT,
+    LineItem INT,
+    OrderDate DATE,
+    DeliveryDate DATE,
+    CustomerKey INT,
+    StoreKey INT,
+    ProductKey INT,
+    Quantity INT,
+    CurrencyCode TEXT,
+    PRIMARY KEY (OrderNumber, LineItem),
+    FOREIGN KEY (CustomerKey) REFERENCES Customers(CustomerKey),
+    FOREIGN KEY (StoreKey) REFERENCES Stores(StoreKey),
+    FOREIGN KEY (ProductKey) REFERENCES Products(ProductKey)
+)
+
+5.Create Stores Table
+CREATE TABLE IF NOT EXISTS Stores (
+    StoreKey INT PRIMARY KEY,
+    Country TEXT,
+    State TEXT,
+    SquareMeters FLOAT,
+    OpenDate DATE
+)
+
+Data Insertion Queries
+
+6.Insert into Customers Table
+INSERT OR IGNORE INTO Customers (CustomerKey, Gender, Name, City, StateCode, State, ZipCode, Country, Continent, Birthday, Age, AgeRange)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+
+7.Insert into ExchangeRates Table
+INSERT OR IGNORE INTO ExchangeRates (Date, Currency, Exchange)
+VALUES (?, ?, ?)
+Insert into Products Table
+
+8.INSERT OR IGNORE INTO Products (ProductKey, ProductName, Brand, Color, UnitCostUSD, UnitPriceUSD, SubcategoryKey, Subcategory, CategoryKey, Category)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+
+9.Insert into Sales Table
+INSERT OR IGNORE INTO Sales (OrderNumber, LineItem, OrderDate, DeliveryDate, CustomerKey, StoreKey, ProductKey, Quantity, CurrencyCode)
+VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+
+10.Insert into Stores Table
+INSERT OR IGNORE INTO Stores (StoreKey, Country, State, SquareMeters, OpenDate)
+VALUES (?, ?, ?, ?, ?)
